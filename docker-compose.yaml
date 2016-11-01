@@ -20,7 +20,7 @@ services:
       - "3306:3306"
     volumes:
       - ./.docker/data:/var/lib/mysql
-    #  - ./.docker/data-init:/docker-entrypoint-initdb.d # Place init .sql file(s) in the data-init folder.
+    #  - ./.docker/data-init:/docker-entrypoint-initdb.d # Place init .sql file(s) in the .docker/data-init folder.
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

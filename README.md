@@ -1,4 +1,4 @@
-# Docker Template
+# Docker Template for Drupal 8 Composer-based website
 
 Includes:
 * Apache
