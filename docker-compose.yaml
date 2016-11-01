@@ -1,0 +1,35 @@
+version: '2'
+services:
+  web:
+    build: .docker/web
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/drupal
+    #links:
+    #  - db
+
+  db:
+    build: .docker/db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./.docker/data:/var/lib/mysql
+    #  - ./.docker/data-init:/docker-entrypoint-initdb.d # Place init .sql file(s) in the data-init folder.
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: drupal
+      PMA_PASSWORD: drupal
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    restart: always
+    ports:
+     - 8080:80
