@@ -6,8 +6,6 @@ services:
       - "80:80"
     volumes:
       - .:/var/www/drupal
-    #links:
-    #  - db
 
   db:
     build: .docker/db
@@ -33,3 +31,8 @@ services:
     restart: always
     ports:
      - 8080:80
+
+  drush:
+    image: drush/drush
+    volumes_from:
+      - web
