@@ -31,8 +31,3 @@ services:
     restart: always
     ports:
      - 8080:80
-
-  drush:
-    build: .docker/drush
-    volumes_from:
-      - web
