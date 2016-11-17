@@ -15,5 +15,6 @@ Theoretically, drop the contents of this repo into your project root, and run `d
 * `mv Docker-AMP5/.docker/ .`
 * `mv Docker-AMP5/docker-compose.yaml .`
 * `rm -Rf Docker-AMP5`
+* `composer update`
 * `docker-compose up -d --build --remove-orphans`
 * Navigate to "localhost" in your browser and install Drupal!
