@@ -1,0 +1,2 @@
+#!/bin/sh
+docker-compose exec web /var/www/drupal/vendor/drupal/console/bin/drupal "$@"
