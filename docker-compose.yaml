@@ -17,7 +17,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - .docker-runtime/data:/var/lib/mysql
+      - .docker/runtime/data:/var/lib/mysql
     #  - .docker/db-init:/docker-entrypoint-initdb.d # Place init .sql file(s) in the .docker/db-init folder.
 
   phpmyadmin:
